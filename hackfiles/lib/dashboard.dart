@@ -92,7 +92,7 @@ class _DashboardState extends State<Dashboard> {
                         borderSide:
                             BorderSide(color: Color(0xFFEDEDED), width: 1.0)),
                     fillColor: Color(0xFFEDEDED),
-                    // filled: true,
+                    filled: true,
                     suffixIcon: Container(
                       margin: EdgeInsets.only(right: 5.0),
                       decoration: BoxDecoration(
