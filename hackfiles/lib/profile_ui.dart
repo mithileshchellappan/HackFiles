@@ -5,6 +5,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'welcomepage.dart';
+
 const kSpacingUnit = 10;
 
 const kDarkPrimaryColor = Color(0xFF212121);
@@ -142,7 +144,8 @@ class ProfileScreen extends StatelessWidget {
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
           firstChild: GestureDetector(
-            onTap: () => ThemeSwitcher.of(context).changeTheme(theme: kLightTheme),
+            onTap: () =>
+                ThemeSwitcher.of(context).changeTheme(theme: kLightTheme),
             child: Icon(
               LineAwesomeIcons.sun,
               size: ScreenUtil().setSp(kSpacingUnit.w * 3),
@@ -206,10 +209,18 @@ class ProfileScreen extends StatelessWidget {
                         icon: LineAwesomeIcons.user_plus,
                         text: 'Invite a Friend',
                       ),
-                      ProfileListItem(
-                        icon: LineAwesomeIcons.alternate_sign_out,
-                        text: 'Logout',
-                        hasNavigation: false,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WelcomePage()));
+                        },
+                        child: ProfileListItem(
+                          icon: LineAwesomeIcons.alternate_sign_out,
+                          text: 'Logout',
+                          hasNavigation: false,
+                        ),
                       ),
                     ],
                   ),
